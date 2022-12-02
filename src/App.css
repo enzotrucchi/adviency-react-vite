@@ -15,5 +15,14 @@
 
 * {
 	font-family: "Recoleta-Regular";
-	/* font-family: "MountainsOfChristmas-Regular"; */
+	background-image: url("./assets/images/glittery.jpg");
+}
+
+.App {
+	margin: 10px 200px;
+	background: #fff;
+}
+
+.App h1 {
+	font-family: "MountainsOfChristmas-Bold";
 }
