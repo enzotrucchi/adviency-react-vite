@@ -1,3 +1,12 @@
+body {
+	margin: 0;
+	background: linear-gradient(90deg, #ff000052 0%, #ff0000 50%, #ff0000 100%);
+}
+
+.App-link {
+	color: #61dafb;
+}
+
 @font-face {
 	font-family: "MountainsOfChristmas-Regular";
 	src: url("./fonts/MountainsofChristmas-Regular.ttf");
@@ -15,12 +24,9 @@
 
 * {
 	font-family: "Recoleta-Regular";
-	background-image: url("./assets/images/glittery.jpg");
 }
 
 .App {
-	margin: 10px 200px;
-	background: #fff;
 }
 
 .App h1 {

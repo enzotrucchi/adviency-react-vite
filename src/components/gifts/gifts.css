@@ -1,0 +1,12 @@
+.giftsList {
+	width: 500px;
+	margin: 100px auto;
+
+	display: flex;
+	flex-direction: column;
+
+	background-color: white;
+	padding: 20px;
+	border-radius: 5px;
+	border: 1px solid black;
+}

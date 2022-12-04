@@ -1,20 +1,11 @@
-import { useState } from "react";
+import Gifts from "./components/gifts/gifts";
 
-//css
 import "./App.css";
 
 function App() {
-	const [regalos, setRegalos] = useState(["Camiseta", "Medias", "Calzones"]);
-
 	return (
 		<div className="App">
-			<h1>Lista de Regalos</h1>
-
-			<ul>
-				{regalos.map((regalo, index) => {
-					return <li key={index}>{regalo}</li>;
-				})}
-			</ul>
+			<Gifts />
 		</div>
 	);
 }
