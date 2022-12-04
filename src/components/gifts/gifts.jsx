@@ -11,17 +11,23 @@ const Gifts = () => {
 		setRegalos([...regalos, gift]);
 	}
 
+	function editGift(gift) {
+		const index = regalos.indexOf(gift);
+		const newGift = prompt("Editar regalo", gift);
+		const newGifts = [...regalos];
+		newGifts[index] = newGift;
+		setRegalos(newGifts);
+	}
+
 	return (
 		<div className="giftsList">
 			<h1>Lista de Regalos</h1>
 
 			<NewGift onCreate={addGift} />
 
-			<ul>
-				{regalos.map((regalo, index) => {
-					return <Gift item={regalo} key={index} />;
-				})}
-			</ul>
+			{regalos.map((regalo, index) => {
+				return <Gift item={regalo} key={index} onEdit={editGift} />;
+			})}
 		</div>
 	);
 };
