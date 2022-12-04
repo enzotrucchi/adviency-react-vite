@@ -10,3 +10,24 @@
 	border-radius: 5px;
 	border: 1px solid black;
 }
+
+.newGiftForm {
+	display: flex;
+	gap: 5px;
+}
+
+.newGiftForm input {
+	flex: 1;
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid rgb(45, 45, 45);
+}
+
+.newGiftForm button {
+	flex: 0;
+	padding: 10px;
+	border-radius: 5px;
+	background-color: #063e08;
+	color: white;
+	text-transform: uppercase;
+}
