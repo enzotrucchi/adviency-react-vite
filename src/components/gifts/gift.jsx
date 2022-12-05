@@ -1,8 +1,12 @@
 import React from "react";
 
-const Gift = ({ item, onEdit }) => {
+const Gift = ({ item, onEdit, onDelete }) => {
 	function handleClick() {
 		onEdit(item);
+	}
+
+	function handleDelete() {
+		onDelete(item);
 	}
 
 	return (
@@ -10,6 +14,16 @@ const Gift = ({ item, onEdit }) => {
 			<span className="giftTitle">{item}</span>
 			<button onClick={handleClick} type="button" className="updateButton">
 				Editar
+			</button>
+
+			<button
+				type="button"
+				className="deleteButton"
+				onClick={() => {
+					handleDelete(item);
+				}}
+			>
+				Eliminar
 			</button>
 		</div>
 	);

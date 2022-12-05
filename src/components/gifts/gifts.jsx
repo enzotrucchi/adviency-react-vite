@@ -8,6 +8,11 @@ const Gifts = () => {
 	const [regalos, setRegalos] = useState(["Camiseta", "Medias", "Calzones"]);
 
 	function addGift(gift) {
+		if (regalos.includes(gift)) {
+			alert("El regalo ya existe");
+			return;
+		}
+
 		setRegalos([...regalos, gift]);
 	}
 
@@ -19,6 +24,12 @@ const Gifts = () => {
 		setRegalos(newGifts);
 	}
 
+	function deleteGift(gift) {
+		const newGifts = regalos.filter((regalo) => regalo !== gift);
+
+		setRegalos(newGifts);
+	}
+
 	return (
 		<div className="giftsList">
 			<h1>Lista de Regalos</h1>
@@ -26,7 +37,14 @@ const Gifts = () => {
 			<NewGift onCreate={addGift} />
 
 			{regalos.map((regalo, index) => {
-				return <Gift item={regalo} key={index} onEdit={editGift} />;
+				return (
+					<Gift
+						item={regalo}
+						key={index}
+						onEdit={editGift}
+						onDelete={deleteGift}
+					/>
+				);
 			})}
 		</div>
 	);

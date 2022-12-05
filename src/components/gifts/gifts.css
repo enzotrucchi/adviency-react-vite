@@ -17,6 +17,7 @@ button {
 	flex: 0;
 	padding: 10px 20px;
 	border-radius: 5px;
+	border: 1px solid white;
 	text-transform: uppercase;
 	cursor: pointer;
 }
@@ -57,5 +58,11 @@ button {
 
 .updateButton {
 	background-color: #05032a;
+	color: white;
+	margin-right: 3px;
+}
+
+.deleteButton {
+	background-color: #5a0505;
 	color: white;
 }
