@@ -28,11 +28,7 @@ const NewGift = ({ onCreate }) => {
 		<form className="newGiftForm" onSubmit={handleSubmit}>
 			<input onChange={handleChange} type="text" value={gift}></input>
 
-			<button
-				type="submit"
-				className="btn
-				btn-primary newGiftButton"
-			>
+			<button type="submit" className="newGiftButton">
 				Agregar
 			</button>
 		</form>

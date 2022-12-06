@@ -16,11 +16,10 @@ const Gifts = () => {
 		setRegalos([...regalos, gift]);
 	}
 
-	function editGift(gift) {
+	function editGift(gift, newValue) {
 		const index = regalos.indexOf(gift);
-		const newGift = prompt("Editar regalo", gift);
 		const newGifts = [...regalos];
-		newGifts[index] = newGift;
+		newGifts[index] = newValue;
 		setRegalos(newGifts);
 	}
 
@@ -30,11 +29,17 @@ const Gifts = () => {
 		setRegalos(newGifts);
 	}
 
+	function handleDeleteAll() {
+		setRegalos([]);
+	}
+
 	return (
 		<div className="giftsList">
 			<h1>Lista de Regalos</h1>
 
 			<NewGift onCreate={addGift} />
+
+			<h3>{regalos.length === 0 && "No hay regalos, agrega uno ahora!"}</h3>
 
 			{regalos.map((regalo, index) => {
 				return (
@@ -46,6 +51,16 @@ const Gifts = () => {
 					/>
 				);
 			})}
+
+			{regalos.length > 0 && (
+				<button
+					onClick={handleDeleteAll}
+					className="deleteButton"
+					type="button"
+				>
+					Borrar lista
+				</button>
+			)}
 		</div>
 	);
 };

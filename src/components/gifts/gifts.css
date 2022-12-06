@@ -9,8 +9,6 @@
 	padding: 20px;
 	border-radius: 5px;
 	border: 1px solid black;
-
-	/* justify-content: center; */
 }
 
 button {
@@ -22,13 +20,19 @@ button {
 	cursor: pointer;
 }
 
-.newGiftForm {
+.giftItem,
+.updateGiftForm {
 	display: flex;
 	gap: 5px;
 	margin-bottom: 5px;
 }
 
-.newGiftForm input {
+.newGiftForm {
+	display: flex;
+	gap: 5px;
+}
+
+input {
 	flex: 1;
 	padding: 10px;
 	border-radius: 5px;
@@ -66,3 +70,4 @@ button {
 	background-color: #5a0505;
 	color: white;
 }
+
