@@ -1,13 +1,7 @@
 import React, { useState } from "react";
 
-const Gift = ({ item, onEdit, onDelete }) => {
-	const [isEdit, setIsEdit] = useState(false);
+const Gift = ({ item, onDelete }) => {
 	const [newValue, setNewValue] = useState(item);
-
-	function handleClick() {
-		onEdit(item, newValue);
-		setIsEdit(false);
-	}
 
 	function handleDelete() {
 		onDelete(item);
@@ -36,15 +30,9 @@ const Gift = ({ item, onEdit, onDelete }) => {
 	function GiftItem() {
 		return (
 			<div className="giftItem">
-				<span className="giftTitle">{item}</span>
-
-				<button
-					onClick={() => setIsEdit(true)}
-					type="button"
-					className="updateButton"
-				>
-					Editar
-				</button>
+				<span className="giftTitle">
+					{item.name} x {item.quantity}
+				</span>
 
 				<button
 					type="button"
@@ -59,7 +47,7 @@ const Gift = ({ item, onEdit, onDelete }) => {
 		);
 	}
 
-	return <div>{isEdit ? GiftEdit() : GiftItem()}</div>;
+	return <div>{GiftItem()}</div>;
 };
 
 export default Gift;
