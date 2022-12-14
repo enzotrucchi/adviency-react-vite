@@ -6,6 +6,7 @@ const NewGift = ({ onCreate }) => {
 	const [gift, setGift] = useState({
 		name: "",
 		quantity: 0,
+		image: "",
 	});
 
 	function handleSubmit(e) {
@@ -20,6 +21,7 @@ const NewGift = ({ onCreate }) => {
 		setGift({
 			name: "",
 			quantity: 1,
+			image: "",
 		});
 	}
 
@@ -41,9 +43,17 @@ const NewGift = ({ onCreate }) => {
 		// e.preventDefault();
 	}
 
+	function handleChangeImage(e) {
+		setGift({
+			...gift,
+			image: e.target.value,
+		});
+	}
+
 	return (
 		<form className="newGiftForm" onSubmit={handleSubmit}>
 			<input
+				style={{ width: "200px" }}
 				className="newGiftInputName"
 				onChange={handleChange}
 				type="text"
@@ -51,6 +61,14 @@ const NewGift = ({ onCreate }) => {
 			></input>
 
 			<input
+				style={{ width: "100px" }}
+				type="text"
+				onChange={handleChangeImage}
+				value={gift.image}
+			/>
+
+			<input
+				style={{ width: "50px" }}
 				className="newGiftInputQty"
 				type="number"
 				value={gift.quantity}

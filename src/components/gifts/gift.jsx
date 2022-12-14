@@ -31,6 +31,14 @@ const Gift = ({ item, onDelete }) => {
 		return (
 			<div className="giftItem">
 				<span className="giftTitle">
+					<img
+						className="giftImage img-fluid"
+						src={item.image}
+						alt={item.name}
+						width="50"
+						height="50"
+						style={{ marginRight: "10px" }}
+					></img>
 					{item.name} x {item.quantity}
 				</span>
 
